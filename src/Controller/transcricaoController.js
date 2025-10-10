@@ -1,11 +1,16 @@
 const { transcreverTexto } = require("../transcricao.js");
 
-function transcrever(req, res) {
-  const { texto } = req.body;
-  if (!texto) return res.status(400).json({ erro: "Texto é obrigatório." });
-
-  const resultado = transcreverTexto(texto);
-  return res.json({ resultado });
+function create(req, res) {
+  
+  try{
+    const { texto } = req.body;
+    const resultado = transcreverTexto(texto);
+    return res.json({ resultado });
+  } 
+  catch (error){
+    return res.status(400).json({ erro: "Texto é obrigatório." });
+  }
+ 
 }
 
-module.exports = { transcrever };
+module.exports = { create };

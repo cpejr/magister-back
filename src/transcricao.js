@@ -1,4 +1,4 @@
-const substituicoes = require("./Data/substituicoes.js");
+const substituicoes = require("./Data/substituicoes");
 function transcreverTexto(text) {
   const substituicoesOrdenadas = substituicoes
     .slice()

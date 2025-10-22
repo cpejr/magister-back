@@ -5,7 +5,7 @@ function transcreverTexto(text) {
     .sort(([a], [b]) => b.length - a.length);
   let textoTranscrito = text;
   substituicoesOrdenadas.forEach(([palavra_original, palavra_transcrita]) => {
-    const padraoBusca = new RegExp(palavra_original, "gi");
+    const padraoBusca = new RegExp("\\b" + palavra_original + "\\b", "gi");
     textoTranscrito = textoTranscrito.replace(padraoBusca, palavra_transcrita);
   });
   return textoTranscrito;

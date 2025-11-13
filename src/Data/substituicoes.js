@@ -28,7 +28,7 @@ const substituicoes = [
   ["Rio Eufrates", "energia Sexual"],
   ["Anjo", "Inteligência"],
   ["Adão", "Consciência na Alma"],
-  ["Sete", "Postura"],
+  ["Seth", "Postura"],
   ["Enos", "Clamor"],
   ["Enoque", "Consagração"],
   ["Matusalém", "Longanimidade"],

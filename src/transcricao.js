@@ -22,7 +22,7 @@ function transcreverTexto(text) {
 
   let textoTranscrito = text;
 
-  let padraoBuscaAlma = new RegExp(ALMA, "gi");
+  let padraoBuscaAlma = new RegExp(`\\b${ALMA}\\b`, "gi");
   textoTranscrito = textoTranscrito.replace(padraoBuscaAlma, CONSCIENCIA);
 
   substituicoesOrdenadas.forEach(([palavra_original, palavra_transcrita]) => {
@@ -32,15 +32,16 @@ function transcreverTexto(text) {
       valor_substituido = TOKEN_ALMA_DA_TERRA;
     }
 
-    let padraoBuscaOriginal = new RegExp(palavra_original, "gi");
+    let padraoBuscaOriginal = new RegExp(`\\b${palavra_original}\\b`, "gi");
     textoTranscrito = textoTranscrito.replace(
       padraoBuscaOriginal,
       valor_substituido
     );
 
     const palavraSemAcento = removerAcentos(palavra_original);
+
     if (palavraSemAcento !== palavra_original) {
-      let padraoBuscaSemAcento = new RegExp(palavraSemAcento, "gi");
+      let padraoBuscaSemAcento = new RegExp(`\\b${palavraSemAcento}\\b`, "gi");
       textoTranscrito = textoTranscrito.replace(
         padraoBuscaSemAcento,
         valor_substituido
@@ -48,7 +49,10 @@ function transcreverTexto(text) {
     }
   });
 
-  let padraoBuscaTokenCompleto = new RegExp(TOKEN_ALMA_DA_TERRA, "g");
+  let padraoBuscaTokenCompleto = new RegExp(
+    `\\b${TOKEN_ALMA_DA_TERRA}\\b`,
+    "g"
+  );
   textoTranscrito = textoTranscrito.replace(padraoBuscaTokenCompleto, ALMA);
 
   return textoTranscrito;

@@ -33,7 +33,7 @@ const substituicoes = [
   ["Enoque", "Consagração"],
   ["Matusalém", "Longanimidade"],
   ["Noé", "Justiça"],
-  ["Sem", "Sensatez"],
+  ["Shem", "Sensatez"],
   ["Jafé", "Respeito"],
   ["Cam", "Insensatez"],
   ["Canaã", "Estupidez"],
